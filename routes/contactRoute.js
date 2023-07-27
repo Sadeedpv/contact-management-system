@@ -3,13 +3,13 @@ const router = express.Router();
 
 // CONTROLLERS
 
-const { getAllContacts } = require('../controllers/contactController');
-const { getContact } = require('../controllers/contactController');
-const { postContact } = require('../controllers/contactController');
-const { putContact } = require('../controllers/contactController');
-const { deleteContact } = require('../controllers/contactController');
-
-
+const {
+  getAllContacts,
+  getContact,
+  postContact,
+  putContact,
+  deleteContact,
+} = require("../controllers/contactController");
 
 // ROUTES
 
