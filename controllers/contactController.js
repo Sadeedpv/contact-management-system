@@ -8,7 +8,17 @@ const Contacts = require("../models/contactModel");
 
 const getAllContacts = asyncHandler(async (req, res) => {
   const contacts = await Contacts.find({ users_Id: req.user.id });
-  res.status(201).json(contacts);
+  // Convert the contacts to CSV
+  let csv = 'name, email, phone\n';
+
+  for (const contact of contacts) {
+    csv += `${contact.name}, ${contact.email}, ${contact.phone}\n`
+  }
+  
+  // Send the file as CSV
+  res.setHeader("Content-Type", "text/csv");
+  res.setHeader("Content-Disposition", "attachment; filename=contacts.csv");
+  res.status(201).send(csv);
 });
 
 // @desc GET a particular contact with a particular id

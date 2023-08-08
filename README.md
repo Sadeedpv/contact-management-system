@@ -20,7 +20,7 @@ The application will be running on port 5001.
 
 The application exposes the following endpoints:
 
-* `/api/contacts`: Get all contacts for the current user.
+* `/api/contacts`: Get all contacts for the current user as a CSV file.
 * `/api/contacts/:id`: Get a specific contact by id.
 * `/api/contacts`: Create a new contact.
 * `/api/contacts/:id`: Update a contact.
